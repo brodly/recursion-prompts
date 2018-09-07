@@ -666,26 +666,21 @@ var alternateSign = function(array) {
 // numToText("I have 5 dogs and 6 ponies"); // "I have five dogs and six ponies"
 var numToText = function(str) {
   var arrayOfText = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
-  var string = '';
-  console.log(str, 'String Enter')
+  var string = ''
+
   if (str.length === 0) {
     return string;
   }
 
-  console.log(/\s/.test(str[0]), str[0], 'space')
   if (/\s/.test(str[0])) {
-    console.log('whitespace found')
-    string += '*';
-  } else if (typeof parseInt(str[0]) === 'number') {
-    console.log('number found')
+    string += ' ';
+  } else if (parseInt(str[0])) {
     string += arrayOfText[parseInt(str[0])];
   } else {
-    console.log('no match')
     string += str[0];
   }
-  console.log(string, 'String Exit')
 
-  return string += numToText(str.slice(1));
+  return string + numToText(str.slice(1))
 };
 
 
